@@ -13,10 +13,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/buzzfeed-angular",
+            "outputPath": "dist/buzz-feed-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
+              "src/polyfills.ts",
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
@@ -25,7 +26,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/components/qizz/qizz.component.css"
             ],
             "scripts": []
           },
@@ -34,36 +36,29 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "6mb",
-                  "maximumError": "10mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "1mb"
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": true,
+              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
+              "outputHashing": "all",
+              "vendorChunk": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
+              "namedChunks": false,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.development.ts"
-                }
-              ]
-            },
-            "staging": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.staging.ts"
                 }
               ]
             }

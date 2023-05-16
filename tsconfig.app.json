@@ -6,7 +6,10 @@
     "types": []
   },
   "files": [
-    "src/main.ts"
+    "src/main.ts",
+    "src/app/app-routing.module.ts",
+    "src/app/components/qizz/qizz.component.ts",
+    "src/app/pages/home/home.component.ts"
   ],
   "include": [
     "src/**/*.d.ts"
